@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+.sideBar{
+    background-color: rgb(67, 201, 167);
+    height: 100vh;
+}
+ul li a{
+    text-decoration: none;
+    text-decoration-style: solid;
+}
+.sideBar ul li:hover{
+    background-color: rgb(67, 201, 167);
+    border-radius: 3px;
+}
+
+.mainBar{
+    background-color: rgb(221, 169, 236);
+    height: 10vh;
+}
+.input-group{
+    padding-left: 1200px;
+    padding-top: 12px;
+}
+.input-group a{
+    margin-right: 10px;
+    margin-top: 5px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+.layout{
+    background-color: bisque;
+    
+}
+
+
+
+
+

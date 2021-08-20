@@ -1,0 +1,29 @@
+
+<head>
+    <%- include("head.ejs")%>
+</head>
+<body>
+  <%- include("navbar.ejs")%>
+  <section>
+  <form action="/update/" method="POST">
+    
+    <div class="col-md-4 offset-3 mt-5">
+        <h1>Contact us</h1>
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com" value="<%= editdata.email%>"/>
+      </div>
+      <div class=" col-md-6 offset-3 mb-5 mt-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Write Us</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="write here" value="<%= editdata.message%>">
+        <div class="mt-5">
+            <button type="submit" class="btn btn-danger btn-lg btn-block">update</button>
+        </div>
+      </div>
+    </form>
+    <div>
+    </div>
+  </section>
+</body>
+
+<%- include("footer.ejs") %>
+</html>

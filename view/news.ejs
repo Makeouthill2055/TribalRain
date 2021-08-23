@@ -3,13 +3,15 @@
   </head>
   <body>
     <%- include("navbar.ejs")%>
-    <div class="container">
-      <div class="row justify-content-around mt-3 mb-4">
+    <div class="container-fluid">
+      <div class="row justify-content-around mt-3 mb-4 bg-danger">
         <h1 class="text-center">NEWS</h1>
     <% for(let i=0; i < newsData.length; i++) { %>
       
           
-              <div class="col-4 card ">
+              <div class="col-3 m-5 card" data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500">
                 
                 <img src="image/<%= newsData[i].image %>" class="card-img-top"  alt="...">
                 <div class="card-body">

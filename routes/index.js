@@ -10,6 +10,8 @@ router.get('/home', indexController.getHome)
 
 router.get('/login', indexController.getlogin)
 
+router.post('/loginau', indexController.logindata)
+
 router.get('/about', indexController.getAbout)
 
 router.get('/contact', indexController.getContact)
@@ -30,9 +32,11 @@ router.get('/admincontact', indexController.getadmincontact)
 
 router.get('/delete/:id',indexController.getDelete)
 
-router.get('/edit/:id', indexController.getEdited)
+router.get('/editnews/:id', indexController.getEdited)
 
-router.post('/update/:id',indexController.postUpdate)
+router.post('/updatenews/:id',indexController.postUpdate)
+
+router.get('/deletenews/:id', indexController.newsdelete)
 
 
 

@@ -55,7 +55,7 @@
         <div class="text-center mb-4"><h2>About us</h2></div>
           <div class="col-md-6 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="1000">
               <div class="owl-carousel owl-theme nav-inside mb-0" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
-                  <div>
+                  <div data-aos="fade-right">
                       <img alt="" class="img-fluid" src="tr.jpg">
                   </div>
                   <div>
@@ -95,4 +95,7 @@
       <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 <%- include("footer.ejs") %>
+<script>
+  AOS.init();
+</script>
 </body>

@@ -33,14 +33,17 @@
         </div>
         <div class="col-md-9 mt-2">
             <div class="row justify-content-around">
-                <div class="col-5">
-                    <h2> ADD NEWS </h2>
+                <div class="col-6 text-center">
+                    <h2 > ADD NEWS </h2>
                    
-                    <form action="/newsdatas" method="POST" enctype="multipart/form-data">
-                        <input type="file" name="image" ><br>
-                        <input type="text" name="title"> <br>
-                        <input type="text" name="details">
-                        <input type="submit" >
+                    <form class="" action="/newsdatas" method="POST" enctype="multipart/form-data">
+                        <input class="form-control" type="file" name="image" ><br>
+                        <input type="text" placeholder="Title" class="form-control" name="title"> <br>
+                        <!-- <input type="text" class="form-control" name="details"> -->
+                        <textarea name="details" placeholder="Details"  class="form-control" cols="30" rows="10"></textarea>
+                        <div class="text-center mb-3">
+                        <input class="btn btn-primary mt-2 " type="submit" >
+                    </div>
                     </form>
                 </div>
                     <div class="col-9">
@@ -68,6 +71,12 @@
                                         </td>
                                         <td>
                                             <%= newsdata[a].details %>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="/deletenews/<%= newsdata[a].id%>">delete</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" href="/editnews/<%= newsdata[a].id%>">Edit</a>
                                         </td>
                                     </tr>
                                <% } %>

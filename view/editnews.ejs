@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="D:\CMS\public\index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 mainBar">
+                <div class="input-group">
+                 <a href="/">Logout</a>
+                <input type="search" class="form-control rounded " placeholder="Search" aria-label="Search"
+                  aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary">search</button>
+              </div>
+        </div>
+
+    <div class="row ">
+        <div class="col-md-3 sideBar">
+            <h2 class="text-center mt-4 mb-4">Tribal Rain</h2>
+           <ul>
+            <li class="form-control contactBtn mt-2 text-center" ><a href="/">Home</a></li>
+            <li class="form-control contactBtn mt-2 text-center"><a href="/about">About</a></li>
+            <li class="form-control contactBtn mt-2 text-center"><a href="/admincontact">Contact</a></li>
+            <li class="form-control contactBtn mt-2 text-center"><a href="/newsportal">News</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9 mt-2">
+            <div class="row justify-content-around">
+                <div class="col-6 text-center">
+                    <h2 > Update News </h2>
+                   
+                    <form class="" action="/updatenews/<%= datanews.id%>" method="POST" enctype="multipart/form-data">
+                        <input class="form-control" type="file" name="image"  ><br>
+                        <input type="text" placeholder="Title" class="form-control" name="title" value="<%= datanews.title%>" > <br>
+                        <!-- <input type="text" class="form-control" name="details"> -->
+                        <textarea name="details" placeholder="Details"  class="form-control" cols="30" rows="10"  ><%= datanews.details%></textarea>
+                        <div class="text-center mb-3">
+                        <input class="btn btn-primary mt-2 " type="submit" >
+                    </div>
+                    </form>
+                </div>
+            </div>   
+        </div>
+        
+    </div>
+  </div> 
+    </section>
+</body>
+</html>

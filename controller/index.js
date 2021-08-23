@@ -2,6 +2,7 @@ const Index = require('../model/index')
 const newsmodel = require('../model/news')
 const path = require('path')
 const fs = require('fs')
+const loginmodel = require("../model/login")
 
 exports.getDashboard = (req, res, next) => {
     res.render('dashboard.ejs')
@@ -11,6 +12,28 @@ exports.getHome = (req, res, next) => {
 }
 exports.getlogin = (req, res, next) => {
     res.render('login.ejs')
+}
+exports.logindata = (req, res, next) => {
+    loginmodel.create({
+        ...req.body
+    }).then(xyz => {
+        loginmodel.find({})
+            .then(logindata => {
+            for (i = 0; i < logindata.length; i++) {
+                secemail = logindata[i].email
+                secpassword = logindata[i].password
+            }
+            correctemail = "manzilkatwal@gmail.com"
+            correctpassword = "apple123"
+            if (correctemail == secemail && correctpassword == secpassword){
+                res.render("dashboard.ejs")
+            }else {
+                res.send("password incorrect")
+            }
+        }).catch(err => {
+        console.log(err)
+            })
+    })
 }
 exports.getAbout = (req, res, next) => {
     res.render('about.ejs')
@@ -97,26 +120,22 @@ exports.getadmincontact = (req, res, next) => {
            
 }
 
-exports.getEdited = (req, res, next ) => {
-    Index.findById(req.params.id)
-    .then(editdata => {
-        res.render('editcontact.ejs', {
-            editdata
+exports.getEdited =(req,res,next) =>{
+    newsmodel.findById(req.params.id)
+    .then(datanews => {
+        res.render('editnews.ejs', {
+            datanews
         })
-        
+    })
+}
+exports.postUpdate = (req,res,next) => {
+    newsmodel.findByIdAndUpdate(req.params.id, { ...req.body}, {new: true})
+    .then(e=> {
+        res.redirect('/newsportal')
     })
     .catch(err => {
         console.log(err)
     })
-}
-exports.postUpdate = (req, res, next) => {
-    Index.findByIdAndUpdate(req.params.id, {
-        ...req.body}, {new: true}).then(e => {
-            res.redirect('/admincontact')
-        }).catch(err => {
-            console.log(err)
-        })
-    
 }
 exports.getDelete = (req, res, next) => {
     Index.findByIdAndDelete(req.params.id)
@@ -127,5 +146,12 @@ exports.getDelete = (req, res, next) => {
         .catch(err => {
             console.log(err)
         })
+}
+exports.newsdelete = (req, res, next) => {
+    newsmodel.findByIdAndDelete(req.params.id)
+        .then(result => {
+            console.log("news deleted fucker")
+            res.redirect('/newsportal')
+})
 }
 

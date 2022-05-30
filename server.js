@@ -35,6 +35,6 @@ app.listen(process.nextTick.PORT || 3000, (err) => {
         console.log("server is ok in localhost 3000")
 
     } else{
-        console.log("server if fucked mate")
+        console.log("server is crashed mate")
     }
 })
